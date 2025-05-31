@@ -78,7 +78,7 @@ int main() {
     resultadoDensidadePopulacional = densidadePopulacional_1 < densidadePopulacional_2;
     resultadoPibPerCapita = pibPerCapita_1 > pibPerCapita_2;
     resultadoSuperPoder = superPoder_1 > superPoder_2;
-    
+
     // Exibição dos Dados das Cartas:
     printf("\n### Carta 1: ###\n");
     printf("Estado: %c\n", estado_1);
@@ -91,7 +91,7 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional_1);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita_1);
     printf("Super Poder: %.2f\n", superPoder_1);
-
+    
     printf("\n### Carta 2: ###\n");
     printf("Estado: %c\n", estado_2);
     printf("Código: %s\n", codigoCarta_2);
@@ -103,9 +103,11 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional_2);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita_2);
     printf("Super Poder: %.2f\n", superPoder_2);
-
+    
     // Exibição do Resultado da Batalha de Cartas:
     printf("\n###*** Resultado da Batalha de Cartas: ***###\n");
+    printf("*** Resultado (1): Venceu! ***\n");
+    printf("*** Resultado (0): Perdeu! ***\n");
     printf("População: Carta 1 venceu? (%d)\n", resultadoPopulacao);
     printf("Área: Carta 1 venceu? (%d)\n", resultadoArea);
     printf("PIB: Carta 1 venceu? (%d)\n", resultadoPib);
@@ -113,6 +115,21 @@ int main() {
     printf("Densidade Populacional: Carta 1 venceu? (%d)\n", resultadoDensidadePopulacional);
     printf("PIB per Capita: Carta 1 venceu? (%d)\n", resultadoPibPerCapita);
     printf("Super Poder: Carta 1 venceu? (%d)\n", resultadoSuperPoder);
+    
+    // Exibição da decisão de vitória para Densidade e PIB
+    printf("\n>>> A cidade que possui a menor densidade demográfica é: ");
+    if (densidadePopulacional_1 < densidadePopulacional_2) {
+        printf("Carta 1 %s\n", cidade_1);
+    } else {
+        printf("Carta 2 %s\n", cidade_2);
+    }
+
+    printf("\n>>> A cidade que possui o maior PIB per capita é: ");
+    if (pibPerCapita_1 > pibPerCapita_2) {
+        printf("Carta 1 %s\n", cidade_1);
+    } else {
+        printf("Carta 2 %s\n", cidade_2);
+    }
 
     return 0;
 }
