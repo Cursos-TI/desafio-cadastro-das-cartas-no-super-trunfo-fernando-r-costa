@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-
-// Desafio Super Trunfo - Países.
-// Novato - Cadastro das Cartas.
-// Aventureiro - Cálculo de Densidade populacional e PIB per capita.
-// Mestre - Batalha de Cartas.
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
     // Variáveis separadas por atributos de cada cidade.
@@ -129,6 +126,63 @@ int main() {
         printf("Carta 1 %s\n", cidade_1);
     } else {
         printf("Carta 2 %s\n", cidade_2);
+    }
+
+    // Escolha do atributo para a batalha
+    int atributoEscolhido;
+
+    printf("\nEscolha o atributo para a batalha:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de Pontos Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("Sua escolha: ");
+    scanf("%d", &atributoEscolhido);
+
+    switch (atributoEscolhido) {
+        case 1:
+            printf("\nAtributo escolhido: População\n");
+            if (resultadoPopulacao) {
+                printf("Carta 1 venceu!\n");
+            } else {
+                printf("Carta 2 venceu!\n");
+            }
+            break;
+        case 2:
+            printf("\nAtributo escolhido: Área\n");
+            if (resultadoArea) {
+                printf("Carta 1 venceu!\n");
+            } else {
+                printf("Carta 2 venceu!\n");
+            }
+            break;
+        case 3:
+            printf("\nAtributo escolhido: PIB\n");
+            if (resultadoPib) {
+                printf("Carta 1 venceu!\n");
+            } else {
+                printf("Carta 2 venceu!\n");
+            }
+            break;
+        case 4:
+            printf("\nAtributo escolhido: Número de Pontos Turísticos\n");
+            if (resultadoPontosTuristicos) {
+                printf("Carta 1 venceu!\n");
+            } else {
+                printf("Carta 2 venceu!\n");
+            }
+            break;
+        case 5:
+            printf("\nAtributo escolhido: Densidade Populacional\n");
+            if (resultadoDensidadePopulacional) {
+                printf("Carta 1 venceu!\n");
+            } else {
+                printf("Carta 2 venceu!\n");
+            }
+            break;
+        default:
+            printf("Opção inválida.\n");
     }
 
     return 0;
