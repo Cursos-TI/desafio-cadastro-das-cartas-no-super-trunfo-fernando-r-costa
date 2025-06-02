@@ -204,10 +204,7 @@ int main() {
     printf("Sua escolha: ");
     scanf("%d", &atributoEscolhido2);
 
-    if (atributoEscolhido1 == atributoEscolhido2) {
-        printf("Você escolheu o mesmo atributo!\n");
-        return 0; // Interrompe o programa aqui
-    }
+    (atributoEscolhido1 == atributoEscolhido2) ? (printf("Você escolheu o mesmo atributo!\n"), exit(0)) : 0;
 
     switch (atributoEscolhido2) {
         case 1:
