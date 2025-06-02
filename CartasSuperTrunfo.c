@@ -128,61 +128,150 @@ int main() {
         printf("Carta 2 %s\n", cidade_2);
     }
 
-    // Escolha do atributo para a batalha
-    int atributoEscolhido;
+    // Escolha dos atributos para a batalha
+    int atributoEscolhido1, atributoEscolhido2, batalha1, batalha2;
 
-    printf("\nEscolha o atributo para a batalha:\n");
+    printf("\nEscolha o primeiro atributo para a batalha:\n");
     printf("1. População\n");
     printf("2. Área\n");
     printf("3. PIB\n");
     printf("4. Número de Pontos Turísticos\n");
     printf("5. Densidade Populacional\n");
     printf("Sua escolha: ");
-    scanf("%d", &atributoEscolhido);
+    scanf("%d", &atributoEscolhido1);
 
-    switch (atributoEscolhido) {
+    switch (atributoEscolhido1) {
         case 1:
             printf("\nAtributo escolhido: População\n");
             if (resultadoPopulacao) {
-                printf("Carta 1 venceu!\n");
+                printf("Carta 1 %s\n", cidade_1);
+                batalha1 = resultadoPopulacao;
             } else {
-                printf("Carta 2 venceu!\n");
+                printf("Carta 2 %s\n", cidade_2);
+                batalha1 = resultadoPopulacao;
             }
             break;
         case 2:
             printf("\nAtributo escolhido: Área\n");
             if (resultadoArea) {
-                printf("Carta 1 venceu!\n");
+                printf("Carta 1 %s\n", cidade_1);
+                batalha1 = resultadoArea;
             } else {
-                printf("Carta 2 venceu!\n");
+                printf("Carta 2 %s\n", cidade_2);
+                batalha1 = resultadoArea;
             }
             break;
         case 3:
             printf("\nAtributo escolhido: PIB\n");
             if (resultadoPib) {
-                printf("Carta 1 venceu!\n");
+                printf("Carta 1 %s\n", cidade_1);
+                batalha1 = resultadoPib;
             } else {
-                printf("Carta 2 venceu!\n");
+                printf("Carta 2 %s\n", cidade_2);
+                batalha1 = resultadoPib;
             }
             break;
         case 4:
             printf("\nAtributo escolhido: Número de Pontos Turísticos\n");
             if (resultadoPontosTuristicos) {
-                printf("Carta 1 venceu!\n");
+                printf("Carta 1 %s\n", cidade_1);
+                batalha1 = resultadoPontosTuristicos;
             } else {
-                printf("Carta 2 venceu!\n");
+                printf("Carta 2 %s\n", cidade_2);
+                batalha1 = resultadoPontosTuristicos;
             }
             break;
         case 5:
             printf("\nAtributo escolhido: Densidade Populacional\n");
             if (resultadoDensidadePopulacional) {
-                printf("Carta 1 venceu!\n");
+                printf("Carta 1 %s\n", cidade_1);
+                batalha1 = resultadoDensidadePopulacional;
             } else {
-                printf("Carta 2 venceu!\n");
+                printf("Carta 2 %s\n", cidade_2);
+                batalha1 = resultadoDensidadePopulacional;
             }
             break;
         default:
             printf("Opção inválida.\n");
+    }
+
+    printf("\nEscolha o segundo atributo para a batalha:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de Pontos Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("Sua escolha: ");
+    scanf("%d", &atributoEscolhido2);
+
+    if (atributoEscolhido1 == atributoEscolhido2) {
+        printf("Você escolheu o mesmo atributo!\n");
+        return 0; // Interrompe o programa aqui
+    }
+
+    switch (atributoEscolhido2) {
+        case 1:
+            printf("\nAtributo escolhido: População\n");
+            if (resultadoPopulacao) {
+                printf("Carta 1 %s\n", cidade_1);
+                batalha2 = resultadoPopulacao;
+            } else {
+                printf("Carta 2 %s\n", cidade_2);
+                batalha2 = resultadoPopulacao;
+            }
+            break;
+        case 2:
+            printf("\nAtributo escolhido: Área\n");
+            if (resultadoArea) {
+                printf("Carta 1 %s\n", cidade_1);
+                batalha2 = resultadoArea;
+            } else {
+                printf("Carta 2 %s\n", cidade_2);
+                batalha2 = resultadoArea;
+            }
+            break;
+        case 3:
+            printf("\nAtributo escolhido: PIB\n");
+            if (resultadoPib) {
+                printf("Carta 1 %s\n", cidade_1);
+                batalha2 = resultadoPib;
+            } else {
+                printf("Carta 2 %s\n", cidade_2);
+                batalha2 = resultadoPib;
+            }
+            break;
+        case 4:
+            printf("\nAtributo escolhido: Número de Pontos Turísticos\n");
+            if (resultadoPontosTuristicos) {
+                printf("Carta 1 %s\n", cidade_1);
+                batalha2 = resultadoPontosTuristicos;
+            } else {
+                printf("Carta 2 %s\n", cidade_2);
+                batalha2 = resultadoPontosTuristicos;
+            }
+            break;
+        case 5:
+            printf("\nAtributo escolhido: Densidade Populacional\n");
+            if (resultadoDensidadePopulacional) {
+                printf("Carta 1 %s\n", cidade_1);
+                batalha2 = resultadoDensidadePopulacional;
+            } else {
+                printf("Carta 2 %s\n", cidade_2);
+                batalha2 = resultadoDensidadePopulacional;
+            }
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+
+    // Exibição do resultado da batalha
+    printf("\n### Resultado Final da Batalha ###\n");
+    if (batalha1 == 1 && batalha2 == 1) {
+        printf("Carta 1 %s venceu ambas as batalhas!\n", cidade_1);
+    } else if (batalha1 == 0 && batalha2 == 0) {
+        printf("Carta 2 %s venceu ambas as batalhas!\n", cidade_2);
+    } else {
+        printf("Houve empate!\n");
     }
 
     return 0;
